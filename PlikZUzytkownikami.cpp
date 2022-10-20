@@ -1,9 +1,5 @@
 #include "PlikZUzytkownikami.h"
 
-PlikZUzytkownikami::PlikZUzytkownikami() {
-    nazwaPlikuZUzytkownikami = "Uzytkownicy.txt";
-}
-
 void PlikZUzytkownikami::dopiszUzytkownikaDoPliku (Uzytkownik uzytkownik) {
     string liniaZDanymiUzytkownika = "";
     plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::app);
@@ -39,8 +35,27 @@ string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowym
     return liniaZDanymiUzytkownika;
 }
 
+vector <Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku() {
+
+    Uzytkownik uzytkownik;
+    vector <Uzytkownik> uzytkownicy;
+    string daneJednegoUzytkownikaOddzielonePionowymiKreskami = "";
+
+    plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::in);
+
+    if (plikTekstowy.good() == true) {
+        while (getline(plikTekstowy, daneJednegoUzytkownikaOddzielonePionowymiKreskami)) {
+            uzytkownik = pobierzDaneUzytkownika(daneJednegoUzytkownikaOddzielonePionowymiKreskami);
+            uzytkownicy.push_back(uzytkownik);
+        }
+    }
+    plikTekstowy.close();
+    return uzytkownicy;
+}
+
 Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami)
 {
+    Uzytkownik uzytkownik;
     string pojedynczaDanaUzytkownika = "";
     int numerPojedynczejDanejUzytkownika = 1;
 
@@ -69,20 +84,4 @@ Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika(string daneJednegoUzytkown
         }
     }
     return uzytkownik;
-}
-
-vector <Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku() {
-
-    string daneJednegoUzytkownikaOddzielonePionowymiKreskami = "";
-
-    plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::in);
-
-    if (plikTekstowy.good() == true) {
-        while (getline(plikTekstowy, daneJednegoUzytkownikaOddzielonePionowymiKreskami)) {
-            uzytkownik = pobierzDaneUzytkownika(daneJednegoUzytkownikaOddzielonePionowymiKreskami);
-            uzytkownicy.push_back(uzytkownik);
-        }
-    }
-    plikTekstowy.close();
-    return uzytkownicy;
 }
