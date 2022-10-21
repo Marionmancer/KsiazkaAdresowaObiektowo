@@ -14,11 +14,15 @@ public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami){
         uzytkownikMenedzer.wczytajUzytkownikowZPliku();
     };
-    void wybierzOpcjeZMenuGlownego();
+    char wybierzOpcjeZMenuGlownego();
     void rejestracjaUzytkownika();
     void logowanieUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void zmianaHaslaZalogowanegoUzytkownika();
+
+    void ustawIdZalogowanegoUzytkownika (int idUzytkownika);
+
+    int pobierzIdZalogowanegoUzytkownika();
 };
 
 #endif //KSIAZKAADRESOWA_H
