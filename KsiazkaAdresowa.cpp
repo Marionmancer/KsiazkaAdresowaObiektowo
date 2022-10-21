@@ -15,3 +15,7 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow(){
 void KsiazkaAdresowa::wybierzOpcjeZMenuGlownego(){
     uzytkownikMenedzer.wybierzOpcjeZMenuGlownego();
 }
+
+void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(){
+    uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
+}

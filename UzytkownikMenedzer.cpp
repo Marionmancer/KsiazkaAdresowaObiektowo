@@ -42,7 +42,7 @@ int UzytkownikMenedzer::logowanieUzytkownika() {
 
                 if (uzytkownicy[i].pobierzHaslo() == haslo) {
                     ustawIdZalogowanegoUzytkownika(uzytkownicy[i].pobierzId());
-                    cout << endl << "Zalogowales sie. Twoje ID w bazie danych wynosi: " << pobierzIdZalogowanegoUzytkownika() << endl << endl;
+                    cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
                     return pobierzIdZalogowanegoUzytkownika();
                 }
@@ -105,6 +105,21 @@ Uzytkownik UzytkownikMenedzer::podajDaneNowegoUzytkownika() {
 
 void UzytkownikMenedzer::wczytajUzytkownikowZPliku() {
     uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+}
+
+void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika() {
+    string noweHaslo = "";
+    cout << "Podaj nowe haslo: ";
+    noweHaslo = MetodyPomocnicze::wczytajLinie();
+
+    for (unsigned int i = 0; i < uzytkownicy.size(); i++) {
+        if (uzytkownicy[i].pobierzId() == pobierzIdZalogowanegoUzytkownika()){
+            uzytkownicy[i].ustawHaslo(noweHaslo);
+            cout << "Haslo zostalo zmienione. -->" << uzytkownicy[i].pobierzHaslo() << endl << endl;
+            system("pause");
+        }
+    }
+    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
 void UzytkownikMenedzer::ustawIdZalogowanegoUzytkownika (int idUzytkownika) {
