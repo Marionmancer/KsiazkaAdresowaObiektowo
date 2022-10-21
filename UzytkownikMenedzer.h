@@ -26,8 +26,13 @@ public:
     UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
     char wybierzOpcjeZMenuGlownego();
     void rejestracjaUzytkownika();
+    int logowanieUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
+
+    void ustawIdZalogowanegoUzytkownika (int idUzytkownika);
+
+    int pobierzIdZalogowanegoUzytkownika();
 };
 
 #endif //UZYTKOWNIKMENEDZER_H

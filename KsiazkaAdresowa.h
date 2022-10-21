@@ -16,6 +16,7 @@ public:
     };
     void wybierzOpcjeZMenuGlownego();
     void rejestracjaUzytkownika();
+    void logowanieUzytkownika();
     void wypiszWszystkichUzytkownikow();
 };
 
