@@ -22,3 +22,9 @@ char MetodyPomocnicze::wczytajZnak() {
     }
     return znak;
 }
+
+string MetodyPomocnicze::wczytajLinie() {
+    string wejscie = "";
+    getline(cin, wejscie);
+    return wejscie;
+}
