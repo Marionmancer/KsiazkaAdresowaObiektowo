@@ -24,6 +24,7 @@ public:
     void wypiszWszystkichUzytkownikow();
     void zmianaHaslaZalogowanegoUzytkownika();
     void dodajAdresata();
+    void wyswietlWszystkichAdresatow();
 
     void ustawIdZalogowanegoUzytkownika (int idUzytkownika);
 
