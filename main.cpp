@@ -7,7 +7,7 @@ using namespace std;
 int main() {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy2.txt");
 
-    while (true){
+    while (true) {
         if (ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() == 0) {
             switch (ksiazkaAdresowa.wybierzOpcjeZMenuGlownego()) {
             case '1':
@@ -26,18 +26,17 @@ int main() {
                 break;
             };
         } else {
-
-            char wybor;
-
-            cout << "Wpisz '1' aby zmienic haslo: " << endl;
-            cout << "Wpisz '2' aby sie wylogowac: " << endl;
-            wybor = MetodyPomocnicze::wczytajZnak();
-
-            switch (wybor) {
+            switch (ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika()) {
             case '1':
+                //cout << "1. Dodaj adresata" << endl;
+                break;
+            case '4':
+                //cout << "4. Wyswietl adresatow" << endl;
+                break;
+            case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
-            case '2':
+            case '8':
                 ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(0);
                 break;
             }
