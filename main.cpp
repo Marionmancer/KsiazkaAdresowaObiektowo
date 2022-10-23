@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy2.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy2.txt" , "Adresaci.txt");
 
     while (true) {
         if (ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() == 0) {
@@ -26,9 +26,10 @@ int main() {
                 break;
             };
         } else {
+            cout << ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika();
             switch (ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika()) {
             case '1':
-                //cout << "1. Dodaj adresata" << endl;
+                ksiazkaAdresowa.dodajAdresata();
                 break;
             case '4':
                 //cout << "4. Wyswietl adresatow" << endl;
@@ -43,12 +44,7 @@ int main() {
         }
     }
 
-    //ksiazkaAdresowa.logowanieUzytkownika();
-    //ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
-    //ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
     //ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-    //ksiazkaAdresowa.rejestracjaUzytkownika();
-    //ksiazkaAdresowa.rejestracjaUzytkownika();
 
     return 0;
 }

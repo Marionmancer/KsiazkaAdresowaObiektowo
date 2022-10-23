@@ -13,6 +13,21 @@
 
 using namespace std;
 
+class AdresatMenedzer {
+    vector <Adresat> adresaci;
+    PlikZAdresatami plikZAdresatami;
+    int idOstatniegoAdresata;
+
+    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
+
+public:
+    AdresatMenedzer(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami){};
+    void dodajAdresata(int idZalogowanegoUzytkownika);
+
+    void ustawIdOstatniegoAdresata(int idOstatniegoAdresataWPliku);
+
+    int pobierzIdOstaniegoAdresata();
+};
 
 
 
