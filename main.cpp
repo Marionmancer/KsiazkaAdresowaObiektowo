@@ -32,7 +32,7 @@ int main() {
                 ksiazkaAdresowa.dodajAdresata();
                 break;
             case '4':
-                //cout << "4. Wyswietl adresatow" << endl;
+                ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
