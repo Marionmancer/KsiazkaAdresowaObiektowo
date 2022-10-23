@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>30</x>
+      <x>20</x>
       <y>70</y>
       <w>370</w>
       <h>220</h>
@@ -29,7 +29,7 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
+      <x>410</x>
       <y>390</y>
       <w>350</w>
       <h>90</h>
@@ -44,7 +44,7 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
+      <x>410</x>
       <y>70</y>
       <w>350</w>
       <h>310</h>
@@ -70,7 +70,7 @@ UzytkownikMenedzer()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
+      <x>410</x>
       <y>500</y>
       <w>350</w>
       <h>210</h>
@@ -90,7 +90,7 @@ PlikZUzytkownikami()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>30</x>
+      <x>20</x>
       <y>300</y>
       <w>370</w>
       <h>150</h>
@@ -110,7 +110,7 @@ PlikZUzytkownikami()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>790</x>
+      <x>780</x>
       <y>70</y>
       <w>330</w>
       <h>200</h>
@@ -124,7 +124,7 @@ PlikZUzytkownikami()
  AdresatMenedzer()
 + dodajAdresata() : Void
 + wyswietlWszystkichAdresatow() : Void
-[NEW]+ wczytajAdresatowZalogowanegoUzytkownikaZPliku() : Integer
++ wczytajAdresatowZalogowanegoUzytkownikaZPliku() : Void
 - podajDaneNowegoAdresata() : Adresat
 - wyswietlDaneAdresata() : Void</panel_attributes>
     <additional_attributes/>
@@ -132,7 +132,7 @@ PlikZUzytkownikami()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>790</x>
+      <x>780</x>
       <y>290</y>
       <w>340</w>
       <h>150</h>
@@ -151,7 +151,7 @@ PlikZUzytkownikami()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>790</x>
+      <x>780</x>
       <y>450</y>
       <w>540</w>
       <h>210</h>
@@ -163,10 +163,11 @@ PlikZUzytkownikami()
 PlikZAdresatami()
 + pobierzZPlikuIdOstatniegoAdresata() :Integer
 + dopiszAdresataDoPliku() : Void
-[NEW]+ wczytajAdresatowZalogowanegoUzytkownikaZPliku() : vector&lt;Adresat&gt;
++ wczytajAdresatowZalogowanegoUzytkownikaZPliku() : vector&lt;Adresat&gt;
 - pobierzIdAdresataZDanychOddzielonychPionowymiKreskami() : String
-[NEW]- pobierzDaneAdresata() : Adresat
-- zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami() : String</panel_attributes>
+- pobierzDaneAdresata() : Adresat
+- zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami() : String
+- pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami() : Integer</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

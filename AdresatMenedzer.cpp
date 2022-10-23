@@ -63,6 +63,10 @@ void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat) {
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
 }
 
+void AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika){
+    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+}
+
 void AdresatMenedzer::ustawIdOstatniegoAdresata (int idOstatniegoAdresataWPliku) {
 
     idOstatniegoAdresata = idOstatniegoAdresataWPliku;
