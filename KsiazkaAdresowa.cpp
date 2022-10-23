@@ -40,6 +40,7 @@ void KsiazkaAdresowa::rejestracjaUzytkownika() {
 
 void KsiazkaAdresowa::logowanieUzytkownika() {
     uzytkownikMenedzer.logowanieUzytkownika();
+    adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(pobierzIdZalogowanegoUzytkownika());
 }
 
 void KsiazkaAdresowa::wypiszWszystkichUzytkownikow() {
