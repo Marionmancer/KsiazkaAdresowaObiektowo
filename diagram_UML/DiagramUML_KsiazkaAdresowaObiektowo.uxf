@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>50</y>
+      <w>370</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>KsiazkaAdresowa
+--
+- uzytkownikMenedzer : UzytkownikMenedzer
+--
+KsiazkaAdresowa()
++ wybierzOpcjeZMenuGlownego() : Char
++ rejestracjaUzytkownika() : Void
++ wypiszWszystkichUzytkownikow() : Void
++ logowanieUzytkownika(): Void
++ zmianaHaslaZalogowanegoUzytkownika() : Void
++ wybierzOpcjeZMenuUzytkownika() : char
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>410</x>
+      <y>370</y>
+      <w>350</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Uzytkownik
+--
+- id : Integer
+- login : String
+- haslo : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>410</x>
+      <y>50</y>
+      <w>350</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>UzytkownikMenedzer
+--
+- idZalogowanegoUzytkownika : Integer
+- uzytkownicy: vector &lt;Uzytkownik&gt;
+- PlikZUzytkownikami plikZUzytkownikami;
+[NEW]- adresatMenedzer : AdresatMenedzer
+[NEW]- PlikZAdresatami plikZAdresatami;
+--
+UzytkownikMenedzer()
++ rejestracjaUzytkownik() : Void
++ logowanieUzytkownika() : Integer
++ wypiszWszystkichUzytkownikow() : Void
++ wczytajUzytkownikowZPliku() : Void 
++ zmianaHaslaZalogowanegoUzytkownika() : Uzytkownik
+[NEW]+ wyswietlWszystkichAdresatow() : Void
+- podajDaneNowegoUzytkownika() : Uzytkownik
+- pobierzIdNowegoUzytkownika() : Integer
+- czyIstniejeLogin() : Boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>410</x>
+      <y>480</y>
+      <w>350</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>PlikZUzytkownikami
+--
+- nazwaPlikuZUzytkownikami : String
+--
+PlikZUzytkownikami()
++ dopiszUzytkownikaDoPliku() : void
++ wczytajUzytkownikowZPliku() : vector &lt;Uzytkownik&gt; 
++ zapiszWszystkichUzytkownikowDoPliku() : void
+- zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami() : String
+- pobierzDaneUzytkownika (): Uzytkownik</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>280</y>
+      <w>370</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>MetodyPomocnicze
+--
+--
++ konwerjsaIntNaString() : string
++ wczytajLinie(): string
++ wczytajZnak() : char
++ czyPlikJestPusty() : boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>780</x>
+      <y>50</y>
+      <w>330</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>AdresatMenedzer
+--
+
+--
+AdresatMenedzer()
+[NEW]+ dodajAdresata() : Integer
+[NEW]+ wyswietlWszystkichAdresatow() : Void
+[NEW]+ wczytajAdresatowZalogowanegoUzytkownikaZPliku() : Integer
+[NEW]- podajDaneNowegoAdresata() : Adresat</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>780</x>
+      <y>210</y>
+      <w>340</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>Adresat
+--
+- id : Integer
+- idUzytkownika : Integer
+- imie : String
+- nazwisko : String
+- numerTelefonu : String
+- email : String
+- adres : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>780</x>
+      <y>370</y>
+      <w>540</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>PlikZAdresatami
+--
+- nazwaPlikuZAdresatami : String
+--
+PlikZAdresatami()
+[NEW]+ dopiszAdresataDoPliku() : Void
+[NEW]+ wczytajAdresatowZalogowanegoUzytkownikaZPliku() : vector&lt;Adresat&gt;
+[NEW]- pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami() : String
+[NEW]- pobierzDaneAdresata() : Adresat</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -15,6 +15,7 @@ public:
         uzytkownikMenedzer.wczytajUzytkownikowZPliku();
     };
     char wybierzOpcjeZMenuGlownego();
+    char wybierzOpcjeZMenuUzytkownika();
     void rejestracjaUzytkownika();
     void logowanieUzytkownika();
     void wypiszWszystkichUzytkownikow();
