@@ -37,5 +37,5 @@ void KsiazkaAdresowa::ustawIdZalogowanegoUzytkownika (int idUzytkownika){
 }
 
 int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika(){
-    uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
+    return uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
 }
