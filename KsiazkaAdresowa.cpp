@@ -57,3 +57,7 @@ void KsiazkaAdresowa::ustawIdZalogowanegoUzytkownika (int idUzytkownika) {
 int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika() {
     return uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
 }
+
+void KsiazkaAdresowa::dodajAdresata() {
+    adresatMenedzer.dodajAdresata(uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
+}
