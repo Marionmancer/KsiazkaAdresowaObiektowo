@@ -8,7 +8,7 @@ int main() {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt" , "Adresaci.txt");
 
     while (true) {
-        if (ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() == 0) {
+        if (!ksiazkaAdresowa.czyUzytkownikJestZalogowany()) {
             switch (ksiazkaAdresowa.wybierzOpcjeZMenuGlownego()) {
             case '1':
                 ksiazkaAdresowa.rejestracjaUzytkownika();
@@ -17,7 +17,6 @@ int main() {
                 ksiazkaAdresowa.logowanieUzytkownika();
                 break;
             case '9':
-                ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(0);
                 exit(0);
                 break;
             default:
@@ -38,7 +37,7 @@ int main() {
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
             case '8':
-                ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(0);
+                ksiazkaAdresowa.wylogowanieUzytkownika();
                 break;
             }
         }
