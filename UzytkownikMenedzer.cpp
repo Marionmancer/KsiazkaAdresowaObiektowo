@@ -25,10 +25,10 @@ int UzytkownikMenedzer::logowanieUzytkownika() {
                 haslo = MetodyPomocnicze::wczytajLinie();
 
                 if (uzytkownicy[i].pobierzHaslo() == haslo) {
-                    ustawIdZalogowanegoUzytkownika(uzytkownicy[i].pobierzId());
+                    idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return pobierzIdZalogowanegoUzytkownika();
+                    return idZalogowanegoUzytkownika;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
@@ -85,10 +85,6 @@ Uzytkownik UzytkownikMenedzer::podajDaneNowegoUzytkownika() {
     uzytkownik.ustawHaslo(haslo);
 
     return uzytkownik;
-}
-
-void UzytkownikMenedzer::wczytajUzytkownikowZPliku() {
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
 
 void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika() {

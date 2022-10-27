@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy2.txt" , "Adresaci.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt" , "Adresaci.txt");
 
     while (true) {
         if (ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() == 0) {
@@ -43,8 +43,6 @@ int main() {
             }
         }
     }
-
-    //ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
 
     return 0;
 }
