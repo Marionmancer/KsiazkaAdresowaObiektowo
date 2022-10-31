@@ -170,7 +170,7 @@ PlikZUzytkownikami()
       <x>420</x>
       <y>550</y>
       <w>540</w>
-      <h>290</h>
+      <h>340</h>
     </coordinates>
     <panel_attributes>PlikZAdresatami
 --
@@ -184,6 +184,7 @@ PlikZAdresatami()
 + zwrocNumerLiniiSzukanegoAdresata() : int 
 + usunWybranaLinieWPliku() : void
 + zaktualizujDaneWybranegoAdresata() : void
+[NEW]+ usunWybranegoAdresataZPliku() : void
 - pobierzIdAdresataZDanychOddzielonychPionowymiKreskami() : string
 - zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami() : string
 - pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami() : integer
@@ -191,7 +192,7 @@ PlikZAdresatami()
 - usunPlik() : void
 - zmienNazwePliku() : void
 - edytujWybranaLinieWPliku() : void
-</panel_attributes>
+[NEW]- ustawIdOstatniegoAdresataPoUsunieciuWybranegoAdresata () : void</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
