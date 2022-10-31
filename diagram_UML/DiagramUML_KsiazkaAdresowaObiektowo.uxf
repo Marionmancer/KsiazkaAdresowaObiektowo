@@ -5,9 +5,9 @@
     <id>UMLClass</id>
     <coordinates>
       <x>20</x>
-      <y>20</y>
+      <y>0</y>
       <w>370</w>
-      <h>280</h>
+      <h>320</h>
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 --
@@ -27,6 +27,8 @@ KsiazkaAdresowa()
 + wyswietlWszystkichAdresatow() : void
 + wylogowanieUzytkownika() : void
 + czyUzytkownikJestZalogowany() : bool
+[NEW]+ wyszukajAdresatowPoImieniu() : void
+[NEW]+ wyszukajAdresatowPoNazwisku() : void
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -34,7 +36,7 @@ KsiazkaAdresowa()
     <id>UMLClass</id>
     <coordinates>
       <x>440</x>
-      <y>20</y>
+      <y>0</y>
       <w>350</w>
       <h>90</h>
     </coordinates>
@@ -49,7 +51,7 @@ KsiazkaAdresowa()
     <id>UMLClass</id>
     <coordinates>
       <x>440</x>
-      <y>120</y>
+      <y>100</y>
       <w>350</w>
       <h>250</h>
     </coordinates>
@@ -75,8 +77,8 @@ UzytkownikMenedzer()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>440</x>
-      <y>380</y>
+      <x>430</x>
+      <y>420</y>
       <w>550</w>
       <h>210</h>
     </coordinates>
@@ -96,7 +98,7 @@ PlikZUzytkownikami()
     <id>UMLClass</id>
     <coordinates>
       <x>20</x>
-      <y>310</y>
+      <y>330</y>
       <w>390</w>
       <h>150</h>
     </coordinates>
@@ -116,9 +118,9 @@ PlikZUzytkownikami()
     <id>UMLClass</id>
     <coordinates>
       <x>810</x>
-      <y>180</y>
+      <y>160</y>
       <w>360</w>
-      <h>170</h>
+      <h>220</h>
     </coordinates>
     <panel_attributes>AdresatMenedzer
 --
@@ -129,15 +131,18 @@ PlikZUzytkownikami()
  AdresatMenedzer()
 + dodajAdresata() : void
 + wyswietlWszystkichAdresatow() : void
+[NEW]+ wyszukajAdresatowPoImieniu() : void
+[NEW]+ wyszukajAdresatowPoNazwisku() : void
 - podajDaneNowegoAdresata() : Adresat
-- wyswietlDaneAdresata() : void</panel_attributes>
+- wyswietlDaneAdresata() : void
+[NEW]- wyswietlIloscWyszukanychAdresatow() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>810</x>
-      <y>20</y>
+      <y>0</y>
       <w>330</w>
       <h>150</h>
     </coordinates>
@@ -155,8 +160,8 @@ PlikZUzytkownikami()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>440</x>
-      <y>600</y>
+      <x>430</x>
+      <y>640</y>
       <w>540</w>
       <h>210</h>
     </coordinates>
