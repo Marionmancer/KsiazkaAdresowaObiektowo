@@ -30,8 +30,20 @@ int main() {
             case '1':
                 ksiazkaAdresowa.dodajAdresata();
                 break;
+            case '2':
+                ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
+                break;
+            case '3':
+                ksiazkaAdresowa.wyszukajAdresatowPoNazwisku();
+                break;
             case '4':
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+                break;
+            case '5':
+                //Usun
+                break;
+            case '6':
+                //Edytuj
                 break;
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
@@ -45,3 +57,17 @@ int main() {
 
     return 0;
 }
+
+/*
+#include "AdresatMenedzer.h"
+
+int main(){
+
+    AdresatMenedzer adresatMenedzer;
+
+    adresatMenedzer.wyszukajAdresatowPoImieniu();
+
+    return 0;
+}*/
+
+
