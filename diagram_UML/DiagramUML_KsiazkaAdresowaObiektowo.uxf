@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>20</x>
-      <y>10</y>
+      <y>0</y>
       <w>370</w>
       <h>340</h>
     </coordinates>
@@ -30,6 +30,7 @@ KsiazkaAdresowa()
 + wyszukajAdresatowPoImieniu() : void
 + wyszukajAdresatowPoNazwisku() : void
 + usunAdresata() : void
++ edytujAdresata() : void
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -37,7 +38,7 @@ KsiazkaAdresowa()
     <id>UMLClass</id>
     <coordinates>
       <x>420</x>
-      <y>10</y>
+      <y>0</y>
       <w>350</w>
       <h>90</h>
     </coordinates>
@@ -52,7 +53,7 @@ KsiazkaAdresowa()
     <id>UMLClass</id>
     <coordinates>
       <x>420</x>
-      <y>110</y>
+      <y>100</y>
       <w>350</w>
       <h>250</h>
     </coordinates>
@@ -99,7 +100,7 @@ PlikZUzytkownikami()
     <id>UMLClass</id>
     <coordinates>
       <x>20</x>
-      <y>360</y>
+      <y>350</y>
       <w>390</w>
       <h>190</h>
     </coordinates>
@@ -120,9 +121,9 @@ PlikZUzytkownikami()
     <id>UMLClass</id>
     <coordinates>
       <x>980</x>
-      <y>170</y>
+      <y>160</y>
       <w>360</w>
-      <h>260</h>
+      <h>310</h>
     </coordinates>
     <panel_attributes>AdresatMenedzer
 --
@@ -136,17 +137,19 @@ PlikZUzytkownikami()
 + wyszukajAdresatowPoImieniu() : void
 + wyszukajAdresatowPoNazwisku() : void
 + usunAdresata() : void
++ edytujAdresata() : void
 - podajDaneNowegoAdresata() : Adresat
 - wyswietlDaneAdresata() : void
 - wyswietlIloscWyszukanychAdresatow() : void
-- podajIdWybranegoAdresata() : int</panel_attributes>
+- podajIdWybranegoAdresata() : int
+- wybierzOpcjeZMenuEdycja() : char</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>980</x>
-      <y>10</y>
+      <y>0</y>
       <w>330</w>
       <h>150</h>
     </coordinates>
@@ -167,7 +170,7 @@ PlikZUzytkownikami()
       <x>420</x>
       <y>550</y>
       <w>540</w>
-      <h>270</h>
+      <h>290</h>
     </coordinates>
     <panel_attributes>PlikZAdresatami
 --
@@ -180,12 +183,14 @@ PlikZAdresatami()
 + wczytajAdresatowZalogowanegoUzytkownikaZPliku() : vector&lt;Adresat&gt;
 + zwrocNumerLiniiSzukanegoAdresata() : int 
 + usunWybranaLinieWPliku() : void
++ zaktualizujDaneWybranegoAdresata() : void
 - pobierzIdAdresataZDanychOddzielonychPionowymiKreskami() : string
 - zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami() : string
 - pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami() : integer
 - pobierzDaneAdresata() : Adresat
 - usunPlik() : void
 - zmienNazwePliku() : void
+- edytujWybranaLinieWPliku() : void
 </panel_attributes>
     <additional_attributes/>
   </element>

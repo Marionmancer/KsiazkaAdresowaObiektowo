@@ -43,7 +43,7 @@ int main() {
                 ksiazkaAdresowa.usunAdresata();
                 break;
             case '6':
-                //Edytuj
+                ksiazkaAdresowa.edytujAdresata();
                 break;
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
