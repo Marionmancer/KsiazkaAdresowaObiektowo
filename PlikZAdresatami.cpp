@@ -139,30 +139,6 @@ int PlikZAdresatami::pobierzIdOstaniegoAdresata() {
     return idOstatniegoAdresata;
 }
 
-int PlikZAdresatami::zwrocNumerLiniiSzukanegoAdresata(int idAdresata) {
-    bool czyIstniejeAdresat = false;
-    int numerLiniiWPlikuTekstowym = 1;
-    string daneJednegoAdresataOddzielonePionowymiKreskami = "";
-    fstream plikTekstowy;
-    plikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
-
-    if (plikTekstowy.good() == true && idAdresata != 0) {
-        while(getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami)) {
-            if(idAdresata == pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami)) {
-                czyIstniejeAdresat = true;
-                plikTekstowy.close();
-                return numerLiniiWPlikuTekstowym;
-            } else
-                numerLiniiWPlikuTekstowym++;
-        }
-        if ((czyIstniejeAdresat = false)) {
-            plikTekstowy.close();
-            return 0;
-        }
-    }
-    return 0;
-}
-
 void PlikZAdresatami::usunPlik(string nazwaPlikuZRozszerzeniem) {
     if (remove(nazwaPlikuZRozszerzeniem.c_str()) == 0) {}
     else
@@ -209,18 +185,17 @@ void PlikZAdresatami::usunWybranegoAdresataZPliku(int idUsuwanegoAdresata) {
     ustawIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsuwanegoAdresata);
 }
 
-void PlikZAdresatami::zaktualizujDaneWybranegoAdresata(Adresat adresat, int idEdytowanegoAdresata) {
-    int numerLiniiEdytowanegoAdresata = 0;
+void PlikZAdresatami::zaktualizujDaneWybranegoAdresata(Adresat adresat) {
+    int idEdytowanegoAdresata = adresat.pobierzId();
     string liniaZDanymiAdresata = "";
 
-    numerLiniiEdytowanegoAdresata = zwrocNumerLiniiSzukanegoAdresata(idEdytowanegoAdresata);
     liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
-    edytujWybranaLinieWPliku(numerLiniiEdytowanegoAdresata, liniaZDanymiAdresata);
+    edytujAdresataWPliku(idEdytowanegoAdresata, liniaZDanymiAdresata);
 
     cout << endl << "Dane zostaly zaktualizowane." << endl << endl;
 }
 
-void PlikZAdresatami::edytujWybranaLinieWPliku(int numerEdytowanejLinii, string liniaZDanymiAdresataOddzielonePionowymiKreskami) {
+void PlikZAdresatami::edytujAdresataWPliku(int idEdytowanegoAdresata, string liniaZDanymiAdresataOddzielonePionowymiKreskami) {
     string nazwaTymczasowegoPlikuZAdresatami = "Adresaci_tymczasowo.txt";
     fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
     string wczytanaLinia = "";
@@ -231,7 +206,7 @@ void PlikZAdresatami::edytujWybranaLinieWPliku(int numerEdytowanejLinii, string 
 
     if (odczytywanyPlikTekstowy.good() == true) {
         while (getline(odczytywanyPlikTekstowy, wczytanaLinia)) {
-            if (numerWczytanejLinii == numerEdytowanejLinii) {
+            if (pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) == idEdytowanegoAdresata){
                 if (numerWczytanejLinii == 1)
                     tymczasowyPlikTekstowy << liniaZDanymiAdresataOddzielonePionowymiKreskami;
                 else if (numerWczytanejLinii > 1)
