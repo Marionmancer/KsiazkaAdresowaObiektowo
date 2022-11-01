@@ -111,7 +111,6 @@ PlikZUzytkownikami()
 + konwerjsaStringNaInt() : integer
 + wczytajZnak() : char
 + wczytajLinie(): string
-+ czyPlikJestPusty() : bool
 + pobierzLiczbe() : string
 + zamienPierwszaLitereNaDuzaAPozostaleNaMale() : string
 + wczytajLiczbeCalkowita() : int</panel_attributes>
@@ -192,6 +191,21 @@ PlikZAdresatami()
 - zmienNazwePliku() : void
 - edytujAdresataWPliku() : void
 - ustawIdOstatniegoAdresataPoUsunieciuWybranegoAdresata () : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>980</x>
+      <y>480</y>
+      <w>330</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>PlikTekstowy
+--
+- NAZWA_PLIKU : const string
+--
++ czyPlikJestPusty() : bool</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

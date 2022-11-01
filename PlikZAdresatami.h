@@ -7,12 +7,12 @@
 #include <cstdlib>
 
 #include "Adresat.h"
+#include "PlikTekstowy.h"
 #include "MetodyPomocnicze.h"
 
 using namespace std;
 
-class PlikZAdresatami{
-    const string NAZWA_PLIKU_Z_ADRESATAMI;
+class PlikZAdresatami : public PlikTekstowy {
     int idOstatniegoAdresata;
 
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
@@ -25,7 +25,7 @@ class PlikZAdresatami{
     void ustawIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata);
 
 public:
-    PlikZAdresatami(string nazwaPlikuZAdresatami) : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami){
+    PlikZAdresatami(string nazwaPlikuZAdresatami) : PlikTekstowy(nazwaPlikuZAdresatami){
         idOstatniegoAdresata = 0;
     };
     int pobierzZPlikuIdOstatniegoAdresata();
