@@ -182,17 +182,16 @@ PlikZAdresatami()
 + dopiszAdresataDoPliku() : void
 + wczytajAdresatowZalogowanegoUzytkownikaZPliku() : vector&lt;Adresat&gt;
 + zwrocNumerLiniiSzukanegoAdresata() : int 
-+ usunWybranaLinieWPliku() : void
 + zaktualizujDaneWybranegoAdresata() : void
-[NEW]+ usunWybranegoAdresataZPliku() : void
++ usunWybranegoAdresataZPliku() : void
 - pobierzIdAdresataZDanychOddzielonychPionowymiKreskami() : string
 - zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami() : string
 - pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami() : integer
 - pobierzDaneAdresata() : Adresat
 - usunPlik() : void
 - zmienNazwePliku() : void
-- edytujWybranaLinieWPliku() : void
-[NEW]- ustawIdOstatniegoAdresataPoUsunieciuWybranegoAdresata () : void</panel_attributes>
+- edytujAdresataWPliku() : void
+- ustawIdOstatniegoAdresataPoUsunieciuWybranegoAdresata () : void</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
