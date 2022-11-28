@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>441</x>
+      <y>0</y>
+      <w>259</w>
+      <h>238</h>
+    </coordinates>
+    <panel_attributes>AddressBook
+--
+- userManager : UserManager
+- *addresseeManager : AddresseeManager
+- ADDRESSEES_FILE_NAME : const string
+--
+AddressBook()
+~AddressBook()
++ chooseOptionFromMainMenu() : char
++ chooseOptionFromUserMenu() : char
++ userRegistration() : void
++ userLogin(): void
++ allUsersList() : void
++ loggedInUserPasswordChange() : void
++ addAddressee() : void
++ displayAllAddressees() : void
++ userLogout() : void
++ ifUserLoggedIn() : bool
++ searchAddresseeByName() : void
++ searchAddresseeByLastName() : void
++ deleteAddressee() : void
++ editAddressee() : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>147</x>
+      <y>84</y>
+      <w>245</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>User
+--
+- id : integer
+- login : string
+- password : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>147</x>
+      <y>273</y>
+      <w>245</w>
+      <h>175</h>
+    </coordinates>
+    <panel_attributes>UserManager
+--
+- loggedInUserId : integer
+- users: vector &lt;User&gt;
+- fileWithUsers : FileWithUsers 
+--
+UserManager()
++ userRegistration() : void
++ userLogin() : integer
++ loggedInUserPasswordChange() : void
++ allUsersList() : void
++ userLogout() : void
++ ifUserLoggedIn() : bool
+- enterNewUserDetails() : User
+- getNewUserId() : integer
+- ifLoginExist() : boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>147</x>
+      <y>518</y>
+      <w>385</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>FileWithUsers
+--
+- USERS_FILE_NAME : const string
+--
+FileWithUsers()
++ addUserToFile() : void
++ loadUsersFromFile() : vector &lt;User&gt; 
++ saveAllUsersToFile() : void
+- replaceUserDataWithDataLinesSeparatedByVerticalBars() : string
+- getUserData (): User</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>427</x>
+      <y>273</y>
+      <w>273</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>AuxiliaryMethods
+--
+--
+_+ convertIntToString() : string_
+_+ convertStringToInt() : integer_
+_+ loadChar() : char_
+_+ loadTextLine(): string_
+_+ getNumber() : string_
+_+ convertFirstLetterUppercaseRestLowercase() : string_
+_+ loadInteger() : int_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>728</x>
+      <y>273</y>
+      <w>252</w>
+      <h>217</h>
+    </coordinates>
+    <panel_attributes>AddresseeManager
+--
+- LOGGED_IN_USER_ID : const int 
+- addressees: vector&lt;Addressee&gt;
+- fileWithAddressees: FileWithAddressees
+--
+ AddresseeManager()
++ addAddressee() : void
++ displayAllAddressees() : void
++ searchAddresseeByName() : void
++ searchAddresseeByLastName() : void
++ deleteAddressee() : void
++ editAddressee() : void
+- enterNewAddresseeDetails() : Addressee
+- displayAddresseeData() : void
+- displaySearchedAddresseesQuantity() : void
+- enterSelectedAddresseeId() : int
+- chooseOptionFromEditMenu() : char</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>735</x>
+      <y>49</y>
+      <w>231</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>Addressee
+--
+- id : integer
+- userId : integer
+- name : string
+- lastName : string
+- phoneNumber : string
+- email : string
+- address : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>602</x>
+      <y>518</y>
+      <w>378</w>
+      <h>238</h>
+    </coordinates>
+    <panel_attributes>FileWithAddressees
+--
+- ADDRESSEES_FILE_NAME : const string
+- lastAddresseeId: integer
+--
+FileWithAddressees()
++ getLastAddresseeIdFromFile() : integer
++ addAddresseeToFile() : void
++ loadLoggedUserAddresseesFromFile() : vector&lt;Addressee&gt;
++ returnSearchedAddresseeLineNumber() : int 
++ updateChosenAddresseeData() : void
++ updateChosenAddresseeFromFile() : void
+- getAddresseeIdFromDataSeparatedByVerticalBars() : string
+- replaceAddresseeDataWithDataLinesSeparatedByVerticalBars() : string
+- getUserIdFromDataSeparatedByVerticalBars() : integer
+- getAddresseeData() : Addressee
+- deleteFile() : void
+- changeFileName() : void
+- editAddresseeInFile() : void
+- setLastAddresseeIdAfterChosenAddresseeRemoving () : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>448</x>
+      <y>434</y>
+      <w>231</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>TextFile
+--
+- FILE_NAME : const string
+--
++ ifFileEmpty() : bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>161</y>
+      <w>231</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>310.0;10.0;10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>161</y>
+      <w>203</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+bg=BLACK</panel_attributes>
+    <additional_attributes>10.0;10.0;270.0;10.0;270.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>917</x>
+      <y>147</y>
+      <w>21</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>175</x>
+      <y>140</y>
+      <w>21</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;190.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>441</y>
+      <w>21</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>875</x>
+      <y>483</y>
+      <w>21</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>427</x>
+      <y>399</y>
+      <w>21</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>686</x>
+      <y>399</y>
+      <w>21</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>553</x>
+      <y>231</y>
+      <w>21</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>336</y>
+      <w>49</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>105</x>
+      <y>105</y>
+      <w>56</w>
+      <h>490</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>60.0;680.0;10.0;680.0;10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>385</x>
+      <y>336</y>
+      <w>56</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>483</x>
+      <y>483</y>
+      <w>21</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>637</x>
+      <y>483</y>
+      <w>21</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>959</x>
+      <y>112</y>
+      <w>77</w>
+      <h>490</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>30.0;680.0;90.0;680.0;90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
