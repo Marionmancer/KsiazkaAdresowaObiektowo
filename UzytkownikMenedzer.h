@@ -20,6 +20,9 @@ class UzytkownikMenedzer {
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
 
+    void ustawIdZalogowanegoUzytkownika (int idZalogowanegoUzytkownika);
+    int pobierzIdZalogowanegoUzytkownika();
+
 public:
     UzytkownikMenedzer(string nazwaPlikuZUzytkownikami)
     :plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
