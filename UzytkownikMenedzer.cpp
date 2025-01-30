@@ -1,5 +1,44 @@
 #include "UzytkownikMenedzer.h"
 
+void UzytkownikMenedzer::logowanieUzytkownika()
+{
+    Uzytkownik uzytkownik;
+    string login = "", haslo = "";
+    bool czyZalogowany = false;
+    bool czyLoginIstnieje = false;
+
+    cout << "Podaj login: ";
+    login = MetodyPomocnicze::wczytajLinie();
+
+    for (size_t i = 0; i < uzytkownicy.size(); i++){
+        if (uzytkownicy[i].pobierzLogin() == login){
+            czyLoginIstnieje = true;
+            for (int iloscProb = 3; iloscProb > 0; iloscProb--)
+            {
+                cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
+                haslo = MetodyPomocnicze::wczytajLinie();
+
+                if (uzytkownicy[i].pobierzHaslo() == haslo)
+                {
+                    cout << endl << "Zalogowales sie." << endl << endl;
+                    system("pause");
+                    idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
+                    czyZalogowany = true;
+                }
+            }
+        }
+    }
+    if (czyZalogowany == false && czyLoginIstnieje == true){
+        cout << "Wprowadzono 3 razy bledne haslo." << endl;
+        system("pause");
+        idZalogowanegoUzytkownika = 0;
+    }else if (czyLoginIstnieje == false){
+        cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
+        system("pause");
+        idZalogowanegoUzytkownika = 0;
+    }
+}
+
 void UzytkownikMenedzer::rejestracjaUzytkownika(){
 
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();

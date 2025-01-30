@@ -23,6 +23,7 @@ class UzytkownikMenedzer {
 public:
     UzytkownikMenedzer(string nazwaPlikuZUzytkownikami)
     :plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
+    void logowanieUzytkownika();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
