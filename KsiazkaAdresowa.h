@@ -5,16 +5,18 @@
 
 #include "Uzytkownik.h"
 #include "UzytkownikMenedzer.h"
+#include "Adresat.h"
+#include "AdresatMenedzer.h"
 
 using namespace std;
 
 class KsiazkaAdresowa {
 
     UzytkownikMenedzer uzytkownikMenedzer;
-    //AdresatMenedzer adresatMenedzer;
+    AdresatMenedzer adresatMenedzer;
 
 public:
-    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami);
+    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami);
     void logowanieUzytkownika();
     void rejestracjaUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
