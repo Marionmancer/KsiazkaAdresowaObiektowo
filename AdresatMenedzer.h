@@ -16,11 +16,15 @@ class AdresatMenedzer {
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
 
+    void wyswietlDaneAdresata(Adresat adresat);
+
 public:
     AdresatMenedzer(string nazwaPlikuZAdresatami)
     :plikZAdresatami(nazwaPlikuZAdresatami){};
 
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    void wyswietlWszystkichAdresatow();
+    void wylogujUzytkownika();
 
     void ustawIdZalogowanegoUzytkownika (int idZalogowanegoUzytkownika);
     void ustawWektorAdresaci(vector <Adresat> adresaci);
