@@ -1,5 +1,5 @@
-#ifndef PLIKIZUZYTKOWNIKAMI_H
-#define PLIKIZUZYTKOWNIKAMI_H
+#ifndef PLIKZUZYTKOWNIKAMI_H
+#define PLIKZUZYTKOWNIKAMI_H
 
 #include <iostream>
 #include <fstream>

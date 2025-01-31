@@ -1,7 +1,7 @@
 #include "KsiazkaAdresowa.h"
 
-KsiazkaAdresowa::KsiazkaAdresowa(string nazwaPlikuZUzytkownikami)
-    :uzytkownikMenedzer(nazwaPlikuZUzytkownikami){
+KsiazkaAdresowa::KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami)
+    :uzytkownikMenedzer(nazwaPlikuZUzytkownikami), adresatMenedzer(nazwaPlikuZAdresatami){
     uzytkownikMenedzer.wczytajUzytkownikowZPliku();
 }
 
