@@ -25,5 +25,10 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(){
 }
 
 void KsiazkaAdresowa::wylogujUzytkownika(){
-    uzytkownikMenedzer.wylogujUzytkownika();
+    uzytkownikMenedzer.ustawIdZalogowanegoUzytkownika(0);
+    adresatMenedzer.wylogujUzytkownika();
+}
+
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow(){
+    adresatMenedzer.wyswietlWszystkichAdresatow();
 }
