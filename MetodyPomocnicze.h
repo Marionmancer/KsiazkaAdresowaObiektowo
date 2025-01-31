@@ -15,7 +15,7 @@ public:
     static string konwerjsaIntNaString(int liczba);
     static string wczytajLinie();
     static int konwersjaStringNaInt(string liczba);
-    string pobierzLiczbe(string tekst, int pozycjaZnaku);
-    string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+    static string pobierzLiczbe(string tekst, int pozycjaZnaku);
+    static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
 };
 #endif

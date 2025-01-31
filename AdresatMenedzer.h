@@ -12,15 +12,20 @@ using namespace std;
 
 class AdresatMenedzer {
 
-    int idOstatniegoAdresata;
+    int idZalogowanegoUzytkownika;
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
-
-    //Adresat podajDaneNowegoAdresata();
 
 public:
     AdresatMenedzer(string nazwaPlikuZAdresatami)
     :plikZAdresatami(nazwaPlikuZAdresatami){};
 
+    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+
+    void ustawIdZalogowanegoUzytkownika (int idZalogowanegoUzytkownika);
+    void ustawWektorAdresaci(vector <Adresat> adresaci);
+
+    int pobierzIdZalogowanegoUzytkownika();
+    vector <Adresat> pobierzWektorAdresaci();
 };
 #endif

@@ -68,8 +68,7 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
 }
 
 void UzytkownikMenedzer::wylogujUzytkownika(){
-    //ustawIdZalogowanegoUzytkownika(0);
-    //adresaci.clear();
+    ustawIdZalogowanegoUzytkownika(0);
 }
 
 Uzytkownik UzytkownikMenedzer::podajDaneNowegoUzytkownika() {
