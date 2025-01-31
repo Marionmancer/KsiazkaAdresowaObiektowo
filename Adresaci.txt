@@ -48,3 +48,4 @@
 48|10|Krzysztof|Zielinski|669493134|krzysztof.zielinski@onet.pl|ul. Ogrodowa 6, Wroclaw|
 49|8|Jan|Wojcik|665485832|jan.wojcik@interia.pl|ul. Gorska 4, Gdansk|
 50|2|Dorota|Jankowski|633699715|dorota.jankowski@onet.pl|ul. Polna 37, Lodz|
+51|2|Igor|email@testowy.pl|123456789||Nieznany|

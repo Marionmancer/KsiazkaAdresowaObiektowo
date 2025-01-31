@@ -32,3 +32,7 @@ void KsiazkaAdresowa::wylogujUzytkownika(){
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow(){
     adresatMenedzer.wyswietlWszystkichAdresatow();
 }
+
+void KsiazkaAdresowa::dodajAdresata(){
+    adresatMenedzer.dodajAdresata();
+}
