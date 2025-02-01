@@ -34,7 +34,9 @@ public:
     void wypiszWszystkichUzytkownikow();
     void wyswietlWszystkichAdresatow();
     void dodajAdresata();
-    //bool czyUzytkownikJestZalogowany(); - wykorzystac do wyswietlania Menu
+    bool czyUzytkownikJestZalogowany();
+    char wybierzOpcjeZMenuGlownego();
+    char wybierzOpcjeZMenuUzytkownika();
 
 };
 #endif
