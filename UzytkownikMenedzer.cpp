@@ -113,10 +113,12 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow() {
     }
 }
 
-void UzytkownikMenedzer::wczytajUzytkownikowZPliku() {
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+bool UzytkownikMenedzer::czyUzytkownikJestZalogowany(){
+    if (idZalogowanegoUzytkownika > 0){
+        return true;
+    } else
+        return false;
 }
-
 
 void UzytkownikMenedzer::ustawIdZalogowanegoUzytkownika (int idZalogowanegoUzytkownika) {
     this-> idZalogowanegoUzytkownika = idZalogowanegoUzytkownika;
