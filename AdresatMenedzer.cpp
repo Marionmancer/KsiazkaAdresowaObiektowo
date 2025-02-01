@@ -2,16 +2,9 @@
 
 void AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku() {
     ustawWektorAdresaci(plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku
-                        (pobierzIdZalogowanegoUzytkownika()));
+                        (ID_ZALOGOWANEGO_UZYTKOWNIKA));
 }
 
-void AdresatMenedzer::ustawIdZalogowanegoUzytkownika (int idZalogowanegoUzytkownika) {
-    this-> idZalogowanegoUzytkownika = idZalogowanegoUzytkownika;
-}
-
-int AdresatMenedzer::pobierzIdZalogowanegoUzytkownika() {
-    return idZalogowanegoUzytkownika;
-}
 void AdresatMenedzer::ustawWektorAdresaci(vector <Adresat> adresaci) {
     this-> adresaci = adresaci;
 }
@@ -44,28 +37,26 @@ void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat) {
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
 }
 
-void AdresatMenedzer::wylogujUzytkownika() {
-    adresaci.clear();
-}
-
 void AdresatMenedzer::dodajAdresata() {
     Adresat adresat;
 
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika);
+    adresat = podajDaneNowegoAdresata();
 
     adresaci.push_back(adresat);
-    plikZAdresatami.dopiszAdresataDoPliku(adresat);
+    if(plikZAdresatami.dopiszAdresataDoPliku(adresat))
+        cout << "Nowy adresat zostal dodany!" << endl;
+    else
+        cout << "Blad. Nie udalo sie dodac nowego adresata do pliku." << endl;
+    system("pause");
 }
 
-Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika) {
+Adresat AdresatMenedzer::podajDaneNowegoAdresata() {
     Adresat adresat;
 
     adresat.ustawId(plikZAdresatami.pobierzIdOstatniegoAdresata() + 1);
-    plikZAdresatami.ustawIdOstatniegoAdresata(adresat.pobierzId());
-
-    adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
+    adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
     cout << "Podaj imie: ";
     adresat.ustawImie(MetodyPomocnicze::wczytajLinie());

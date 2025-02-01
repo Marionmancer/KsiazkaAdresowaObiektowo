@@ -22,12 +22,16 @@ class UzytkownikMenedzer {
 
 public:
     UzytkownikMenedzer(string nazwaPlikuZUzytkownikami)
-    :plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
+        :plikZUzytkownikami(nazwaPlikuZUzytkownikami) {
+
+        idZalogowanegoUzytkownika = 0;
+        uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+    };
     void logowanieUzytkownika();
     void rejestracjaUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     void wypiszWszystkichUzytkownikow();
-    void wczytajUzytkownikowZPliku();
+    bool czyUzytkownikJestZalogowany();
 
     void ustawIdZalogowanegoUzytkownika (int idZalogowanegoUzytkownika);
     int pobierzIdZalogowanegoUzytkownika();
