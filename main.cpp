@@ -11,7 +11,7 @@ int main()
 
     while (true)
     {
-        if (ksiazkaAdresowa.czyUzytkownikJestZalogowany())
+        if (ksiazkaAdresowa.czyUzytkownikJestZalogowany() == false)
         {
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
 
