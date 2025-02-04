@@ -36,6 +36,15 @@ void KsiazkaAdresowa::dodajAdresata() {
     }
 }
 
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu(){
+    if (uzytkownikMenedzer.czyUzytkownikJestZalogowany()) {
+        adresatMenedzer -> wyszukajAdresatowPoImieniu();
+    } else {
+        cout << "Aby wyszukac adresatow po imieniu, nalezy najpierw sie zalogowac." << endl;
+        system("pause");
+    }
+}
+
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow() {
     if (uzytkownikMenedzer.czyUzytkownikJestZalogowany()) {
         adresatMenedzer -> wyswietlWszystkichAdresatow();
