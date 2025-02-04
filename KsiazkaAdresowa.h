@@ -32,6 +32,7 @@ public:
     void zmianaHaslaZalogowanegoUzytkownika();
     void wylogujUzytkownika();
     void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
     void wypiszWszystkichUzytkownikow();
     void wyswietlWszystkichAdresatow();
     void dodajAdresata();

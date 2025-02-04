@@ -32,6 +32,8 @@ public:
     void wyszukajAdresatowPoNazwisku();
     void wyswietlWszystkichAdresatow();
     void dodajAdresata();
+    void usunAdresata();
+
 
     void ustawWektorAdresaci(vector <Adresat> adresaci);
     vector <Adresat> pobierzWektorAdresaci();
