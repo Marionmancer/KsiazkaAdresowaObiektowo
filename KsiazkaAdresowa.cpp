@@ -45,6 +45,15 @@ void KsiazkaAdresowa::wyszukajAdresatowPoImieniu(){
     }
 }
 
+void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku(){
+    if (uzytkownikMenedzer.czyUzytkownikJestZalogowany()) {
+        adresatMenedzer -> wyszukajAdresatowPoNazwisku();
+    } else {
+        cout << "Aby wyszukac adresatow po nazwisku, nalezy najpierw sie zalogowac." << endl;
+        system("pause");
+    }
+}
+
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow() {
     if (uzytkownikMenedzer.czyUzytkownikJestZalogowany()) {
         adresatMenedzer -> wyswietlWszystkichAdresatow();
