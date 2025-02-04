@@ -17,6 +17,7 @@ class AdresatMenedzer {
     vector <Adresat> adresaci;
 
     void wyswietlDaneAdresata(Adresat adresat);
+    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
     Adresat podajDaneNowegoAdresata();
 
 public:
@@ -27,6 +28,8 @@ public:
     };
 
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
     void wyswietlWszystkichAdresatow();
     void dodajAdresata();
 
