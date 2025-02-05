@@ -45,6 +45,15 @@ void KsiazkaAdresowa::usunAdresata() {
     }
 }
 
+void KsiazkaAdresowa::edytujAdresata() {
+    if (uzytkownikMenedzer.czyUzytkownikJestZalogowany()) {
+        adresatMenedzer -> edytujAdresata();
+    } else {
+        cout << "Aby edytowac dane adresata, nalezy najpierw sie zalogowac." << endl;
+        system("pause");
+    }
+}
+
 void KsiazkaAdresowa::wyszukajAdresatowPoImieniu(){
     if (uzytkownikMenedzer.czyUzytkownikJestZalogowany()) {
         adresatMenedzer -> wyszukajAdresatowPoImieniu();
