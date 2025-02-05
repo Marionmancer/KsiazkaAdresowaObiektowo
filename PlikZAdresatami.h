@@ -7,16 +7,15 @@
 
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
+#include "PlikTekstowy.h"
 
 using namespace std;
 
-class PlikZAdresatami{
+class PlikZAdresatami :public PlikTekstowy{
 
-    const string NAZWA_PLIKU_Z_ADRESATAMI;
     string nazwaTymczasowegoPlikuZAdresatami = "Adresaci_tymczasowo.txt";
     int idOstatniegoAdresata;
 
-    bool czyPlikJestPusty();
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
@@ -27,7 +26,7 @@ class PlikZAdresatami{
 
 public:
     PlikZAdresatami(string nazwaPlikuZAdresatami)
-                        :NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami){
+                        :PlikTekstowy(nazwaPlikuZAdresatami){
 
         idOstatniegoAdresata = 0;
     };
